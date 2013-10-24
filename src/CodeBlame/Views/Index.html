@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.Page.Title @Model.Page.TitleSuffix</title>
+    <script type="text/javascript" src="/Scripts/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="/Content/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/Content/screen.css" />
+</head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <a class="navbar-brand" href="#">@Model.Page.Title</a>
+                    <ul class="nav navbar-nav navbar-right navbar-props">
+                        <li><a href="http://geteventstore.com/" target="_blank"><img src="/Content/images/eventstore_logo.png" style="padding: 7px;"/></a></li>
+                        <li><a href="http://nancyfx.org" target="_blank"><img src="/Content/images/Nancy-logo.png" height="50"/></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="notifications"></div>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1>Code Blame!</h1>
+                        <p>We all stumble across seriously bad code on a daily basis. This site is a vent for that.</p>
+                        <p><a class="btn btn-primary btn-lg">New Blame</a></p>
+                    </div>
+                </div>
+                @Each.Messages
+                <div class="panel panel-default">
+                    <div class="panel-heading">@Current.Sent</div>
+                    <div class="panel-body">
+                        @Current.Content
+                    </div>
+                </div>
+                @EndEach
+            </div>
+        </div>
+    </body>
+</html>
