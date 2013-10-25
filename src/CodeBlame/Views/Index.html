@@ -4,10 +4,13 @@
     <title>@Model.Page.Title @Model.Page.TitleSuffix</title>
     <script type="text/javascript" src="/Scripts/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/Scripts/highlight.pack.js"></script>
     <link rel="stylesheet" href="/Content/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/Content/highlight/github.css" />
     <link rel="stylesheet" href="/Content/screen.css" />
     <script type="text/javascript">
-        $(function() {
+        $(function () {
+            hljs.initHighlightingOnLoad();
             $('#new-blame').click(function() {
                 $('#new-blame-form').removeClass('hidden');
             });
@@ -39,8 +42,8 @@
                     </div>
                 </div>
                 <div id="new-blame-form" class="hidden panel panel-default">
-                  <div class="panel-heading">New Blame</div>
-                      <div class="panel-body">
+                    <div class="panel-heading">New Blame</div>
+                    <div class="panel-body">
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label for="name" class="col-lg-2 control-label">Name</label>
@@ -52,14 +55,14 @@
                                 <label for="language" class="col-lg-2 control-label">Language</label>
                                 <div class="col-lg-10">
                                     <div class="btn-group">
-                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="language">
-                                        Select Language <span class="caret"></span>
-                                      </button>
-                                      <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">ActionScript</a></li>
-                                        <li><a href="#">JavaScript</a></li>
-                                        <li><a href="#">C#</a></li>
-                                      </ul>
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="language">
+                                            Select Language <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">ActionScript</a></li>
+                                            <li><a href="#">JavaScript</a></li>
+                                            <li><a href="#">C#</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
