@@ -1,4 +1,4 @@
-﻿using JustForFun.NancyAndEventStore.Web.Models.Enums;
+﻿using CodeBlame.Models.Enums;
 
 namespace CodeBlame.Models
 {
