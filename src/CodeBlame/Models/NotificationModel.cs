@@ -1,6 +1,6 @@
 ﻿using JustForFun.NancyAndEventStore.Web.Models.Enums;
 
-namespace JustForFun.NancyAndEventStore.Web.Models
+namespace CodeBlame.Models
 {
     public class NotificationModel
     {

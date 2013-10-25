@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using CodeBlame.Models;
 using EventStore.ClientAPI;
 using EventStore.ClientAPI.Common.Utils;
-using JustForFun.NancyAndEventStore.Web.Models;
 using Nancy;
 
-namespace JustForFun.NancyAndEventStore.Web.Modules
+namespace CodeBlame.Modules
 {
     public class BaseModule : NancyModule
     {
@@ -34,6 +34,7 @@ namespace JustForFun.NancyAndEventStore.Web.Modules
 
                     return View["Index", Model];
                 };
+
             Get["/CreateDummy"] = ಠ_ಠ =>
                 {
                     var message = new Message

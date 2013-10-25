@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustForFun.NancyAndEventStore.Web.Models
+namespace CodeBlame.Models
 {
     public class PageModel
     {

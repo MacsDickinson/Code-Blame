@@ -1,7 +1,7 @@
-﻿using JustForFun.NancyAndEventStore.Web.EventStore;
+﻿using CodeBlame.EventStore;
 using Nancy;
 
-namespace JustForFun.NancyAndEventStore.Web
+namespace CodeBlame
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {

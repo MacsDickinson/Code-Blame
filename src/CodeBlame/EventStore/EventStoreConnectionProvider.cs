@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using EventStore.ClientAPI;
 
-namespace JustForFun.NancyAndEventStore.Web.EventStore
+namespace CodeBlame.EventStore
 {
     public class EventStoreConnectionProvider
     {

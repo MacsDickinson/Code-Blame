@@ -1,4 +1,4 @@
-﻿namespace JustForFun.NancyAndEventStore.Web.Models.Enums
+﻿namespace CodeBlame.Models.Enums
 {
     public class NotificationType
     {
