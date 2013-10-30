@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="EventStore\EventStoreConnectionProvider.cs" />
+    <Compile Include="Models\Blame.cs" />
     <Compile Include="Models\Enums\NotificationType.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\NotificationModel.cs" />
