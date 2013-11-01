@@ -1,4 +1,5 @@
 ﻿using System;
+using CodeBlame.Models.Enums;
 
 namespace CodeBlame.Models
 {
@@ -6,6 +7,7 @@ namespace CodeBlame.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public BlameLanguage Language { get; set; }
         public string Code { get; set; }
         public DateTime DateAdded { get; set; }
     }
