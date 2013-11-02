@@ -88,6 +88,7 @@
     <Content Include="Content\highlight\ir_black.css" />
     <Content Include="Content\highlight\magula.css" />
     <Content Include="Content\highlight\monokai.css" />
+    <Content Include="Content\highlight\obsidian.css" />
     <Content Include="Content\highlight\pojoaque.css" />
     <Content Include="Content\highlight\pojoaque.jpg" />
     <Content Include="Content\highlight\rainbow.css" />
