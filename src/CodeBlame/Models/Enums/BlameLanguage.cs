@@ -4,113 +4,113 @@ namespace CodeBlame.Models.Enums
 {
     public enum BlameLanguage
     {
-        [Display(Name = "Python", Description = "Python")]
+        [Display(Name = "Python")]
         Python = 1,
-        [Display(Name = "Profile", Description = "Profile")]
+        [Display(Name = "Profile")]
         Profile = 2,
-        [Display(Name = "Ruby", Description = "Ruby")]
+        [Display(Name = "Ruby")]
         Ruby = 3,
-        [Display(Name = "Perl", Description = "Perl")]
+        [Display(Name = "Perl")]
         Perl = 4,
-        [Display(Name = "Php", Description = "Php")]
+        [Display(Name = "Php")]
         Php = 5,
-        [Display(Name = "Scala", Description = "Scala")]
+        [Display(Name = "Scala")]
         Scala = 6,
-        [Display(Name = "Go", Description = "Go")]
+        [Display(Name = "Go")]
         Go = 7,
-        [Display(Name = "Xml", Description = "Xml")]
+        [Display(Name = "Xml")]
         Xml = 8,
-        [Display(Name = "Markdown", Description = "Markdown")]
+        [Display(Name = "Markdown")]
         Markdown = 9,
-        [Display(Name = "Django", Description = "Django")]
+        [Display(Name = "Django")]
         Django = 10,
-        [Display(Name = "Css", Description = "Css")]
+        [Display(Name = "Css")]
         Css = 11,
-        [Display(Name = "Json", Description = "Json")]
+        [Display(Name = "Json")]
         Json = 12,
-        [Display(Name = "JavaScript", Description = "JavaScript")]
+        [Display(Name = "JavaScript")]
         JavaScript = 13,
-        [Display(Name = "CoffeeScript", Description = "CoffeeScript")]
+        [Display(Name = "CoffeeScript")]
         CoffeeScript = 14,
-        [Display(Name = "ActionScript", Description = "ActionScript")]
+        [Display(Name = "ActionScript")]
         ActionScript = 15,
-        [Display(Name = "VBScript", Description = "VBScript")]
+        [Display(Name = "VBScript")]
         VBScript = 16,
-        [Display(Name = "Http", Description = "Http")]
+        [Display(Name = "Http")]
         Http = 17,
-        [Display(Name = "Lua", Description = "Lua")]
+        [Display(Name = "Lua")]
         Lua = 18,
-        [Display(Name = "AppleScript", Description = "AppleScript")]
+        [Display(Name = "AppleScript")]
         AppleScript = 19,
-        [Display(Name = "Delphi", Description = "Delphi")]
+        [Display(Name = "Delphi")]
         Delphi = 20,
-        [Display(Name = "Java", Description = "Java")]
+        [Display(Name = "Java")]
         Java = 21,
-        [Display(Name = "Cplusplus", Description = "Cplusplus")]
+        [Display(Name = "C++")]
         Cplusplus = 22,
-        [Display(Name = "ObjectiveC", Description = "ObjectiveC")]
+        [Display(Name = "ObjectiveC")]
         ObjectiveC = 23,
-        [Display(Name = "Vala", Description = "Vala")]
+        [Display(Name = "Vala")]
         Vala = 24,
-        [Display(Name = "CSharp", Description = "CSharp")]
+        [Display(Name = "C#")]
         CSharp = 25,
-        [Display(Name = "D", Description = "D")]
+        [Display(Name = "D")]
         D = 26,
-        [Display(Name = "RSL", Description = "RSL")]
+        [Display(Name = "RSL")]
         RSL = 27,
-        [Display(Name = "RIB", Description = "RIB")]
+        [Display(Name = "RIB")]
         RIB = 28,
-        [Display(Name = "MEL", Description = "MEL")]
+        [Display(Name = "MEL")]
         MEL = 29,
-        [Display(Name = "GLSL", Description = "GLSL")]
+        [Display(Name = "GLSL")]
         GLSL = 30,
-        [Display(Name = "SQL", Description = "SQL")]
+        [Display(Name = "SQL")]
         SQL = 31,
-        [Display(Name = "SmallTalk", Description = "SmallTalk")]
+        [Display(Name = "SmallTalk")]
         SmallTalk = 32,
-        [Display(Name = "Lisp", Description = "Lisp")]
+        [Display(Name = "Lisp")]
         Lisp = 33,
-        [Display(Name = "Clojure", Description = "Clojure")]
+        [Display(Name = "Clojure")]
         Clojure = 34,
-        [Display(Name = "IniFile", Description = "IniFile")]
+        [Display(Name = "IniFile")]
         IniFile = 35,
-        [Display(Name = "Apache", Description = "Apache")]
+        [Display(Name = "Apache")]
         Apache = 36,
-        [Display(Name = "nginx", Description = "nginx")]
+        [Display(Name = "nginx")]
         nginx = 37,
-        [Display(Name = "Diff", Description = "Diff")]
+        [Display(Name = "Diff")]
         Diff = 38,
-        [Display(Name = "DOS", Description = "DOS")]
+        [Display(Name = "DOS")]
         DOS = 39,
-        [Display(Name = "Bash", Description = "Bash")]
+        [Display(Name = "Bash")]
         Bash = 40,
-        [Display(Name = "CMake", Description = "CMake")]
+        [Display(Name = "CMake")]
         CMake = 41,
-        [Display(Name = "Axapta", Description = "Axapta")]
+        [Display(Name = "Axapta")]
         Axapta = 42,
-        [Display(Name = "OneC", Description = "OneC")]
+        [Display(Name = "OneC")]
         OneC = 43,
-        [Display(Name = "AVR", Description = "AVR")]
+        [Display(Name = "AVR")]
         AVR = 44,
-        [Display(Name = "VHDL", Description = "VHDL")]
+        [Display(Name = "VHDL")]
         VHDL = 45,
-        [Display(Name = "Phaser3", Description = "Phaser3")]
+        [Display(Name = "Phaser3")]
         Phaser3 = 46,
-        [Display(Name = "TeX", Description = "TeX")]
+        [Display(Name = "TeX")]
         TeX = 47,
-        [Display(Name = "BrainFuck", Description = "BrainFuck")]
+        [Display(Name = "BrainFuck")]
         BrainFuck = 48,
-        [Display(Name = "Haskell", Description = "Haskell")]
+        [Display(Name = "Haskell")]
         Haskell = 49,
-        [Display(Name = "Erlang", Description = "Erlang")]
+        [Display(Name = "Erlang")]
         Erlang = 50,
-        [Display(Name = "ErlangRepl", Description = "ErlangRepl")]
+        [Display(Name = "ErlangRepl")]
         ErlangRepl = 51,
-        [Display(Name = "Rust", Description = "Rust")]
+        [Display(Name = "Rust")]
         Rust = 52,
-        [Display(Name = "Matlab", Description = "Matlab")]
+        [Display(Name = "Matlab")]
         Matlab = 53,
-        [Display(Name = "R", Description = "R")]
+        [Display(Name = "R")]
         R = 54
     }
 }
