@@ -39,17 +39,17 @@
             <div id="new-blame-form" class="hidden panel panel-default">
                 <div class="panel-heading">Blame</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    <div class="form-horizontal">
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Title</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="title" placeholder="Title">
+                            <input type="text" class="form-control" id="title" placeholder="Title" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="description" class="col-lg-2 control-label">Description</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="description" placeholder="Description">
+                            <textarea id="description" class="form-control" rows="3" placeholder="Description"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -75,7 +75,7 @@
                             <button type="submit" class="btn btn-default" id="add-blame" >Submit</button>
                         </div>
                     </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div id="blames">
@@ -92,6 +92,9 @@
                     <code>{{code}}</code>
                 </pre>
             </div>
+            <div class="panel-footer">
+                <span class="badge">{{language}}</span>
+            </div>
         </div>
     </script>
     <script type="text/javascript">
@@ -104,7 +107,8 @@
                         var blame = {
                             title: blames[i].Title,
                             description: blames[i].Description,
-                            code: blames[i].Code
+                            code: blames[i].Code,
+                            language: blames[i].LanguageName
                         };
                         addBlame(blame, false);
                     }
@@ -131,7 +135,8 @@
                         var newBlame = {
                             title: $('#title').val(),
                             description: $('#description').val(),
-                            code: $('#code').val()
+                            code: $('#code').val(),
+                            language: $('#language').val()
                         };
                         addBlame(newBlame, true);
                         clearBlameForm();

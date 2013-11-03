@@ -1,5 +1,6 @@
 ﻿body {
     background: url('/Content/images/grid.png');
+    color: #323232;
 }
 
 .navbar-default {
@@ -8,10 +9,10 @@
     border-bottom: 3px solid #6BA300;
   }
     .navbar-default .navbar-brand {
-        color: white;
+        color: #E0E2E4;
     }
         .navbar-default .navbar-brand:hover {
-            color: white;
+            color: #E0E2E4;
         }
 
 .navbar-props li a {
