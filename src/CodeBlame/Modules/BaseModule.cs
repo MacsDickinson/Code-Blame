@@ -16,19 +16,15 @@ namespace CodeBlame.Modules
     {
         public dynamic Model = new ExpandoObject();
 
-        protected PageModel Page { get; set; }
-
         private readonly IEventStoreConnection _eventStoreConnection;
 
         public BaseModule(IEventStoreConnection connection)
         {
             _eventStoreConnection = connection;
 
-            SetupModelDefaults();
-
             Get["/"] = ಠ_ಠ =>
                 {
-                    Model.Page.Title = "Code Blame - An Event Store & NancyFX Prototype";
+                    Model.Title = "Code Blame - An Event Store & NancyFX Prototype";
                     Model.Languages = new Dictionary<int, string>();
 
                     var type = typeof(BlameLanguage);
@@ -52,46 +48,13 @@ namespace CodeBlame.Modules
                     var model = this.Bind<Blame>();
                     model.DateAdded = DateTime.Now;
 
-                    var eventData = new List<EventData>();
-                    eventData.Add(new EventData(Guid.NewGuid(), "Blame", true, model.ToJsonBytes(), null));
+                    var eventData = new List<EventData>
+                        {
+                            new EventData(Guid.NewGuid(), "Blame", true, model.ToJsonBytes(), null)
+                        };
                     _eventStoreConnection.AppendToStream("Blames", ExpectedVersion.Any, eventData);
                     return null;
                 };
-
-            Get["/CreateDummy"] = ಠ_ಠ =>
-                {
-                    var message = new Message
-                        {
-                            Content = "Dummy Message",
-                            Sent = DateTime.Now,
-                            To = "Macs"
-                        };
-                    var eventData = new List<EventData>();
-
-                    var json = message.ToJsonBytes();
-                    eventData.Add(new EventData(Guid.NewGuid(), "Message", true, json, null));
-
-                    _eventStoreConnection.AppendToStream("Messages", ExpectedVersion.Any, eventData);
-
-                    return "Added";
-                };
-        }
-
-        private void SetupModelDefaults()
-        {
-            Before += ctx =>
-            {
-                Page = new PageModel
-                {
-                    IsAuthenticated = ctx.CurrentUser != null,
-                    TitleSuffix = " | Just For Fun",
-                    Notifications = new List<NotificationModel>()
-                };
-
-                Model.Page = Page;
-
-                return null;
-            };
         }
     }
 }

@@ -91,10 +91,6 @@
     <Compile Include="EventStore\EventStoreConnectionProvider.cs" />
     <Compile Include="Models\Blame.cs" />
     <Compile Include="Models\Enums\BlameLanguage.cs" />
-    <Compile Include="Models\Enums\NotificationType.cs" />
-    <Compile Include="Models\Message.cs" />
-    <Compile Include="Models\NotificationModel.cs" />
-    <Compile Include="Models\PageModel.cs" />
     <Compile Include="Modules\BaseModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
