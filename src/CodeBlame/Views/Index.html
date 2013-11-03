@@ -40,6 +40,12 @@
                 <div class="panel-heading">Blame</div>
                 <div class="panel-body">
                     <div class="form-group">
+                        <label for="title" class="col-lg-2 control-label">Title</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="title" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="description" class="col-lg-2 control-label">Description</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="description" placeholder="Description">
@@ -76,8 +82,9 @@
     </div>
     <script id="blame-template" type="text/x-handlebars-template">
         <div class="panel panel-default">
-            <div class="panel-heading">{{description}}</div>
+            <div class="panel-heading">{{title}}</div>
             <div class="panel-body">
+                <p>{{description}}</p>
                 <pre>
                     <code>{{code}}</code>
                 </pre>
@@ -92,6 +99,7 @@
                 success: function (blames) {
                     for (var i = 0; i < blames.length; i++) {
                         var blame = {
+                            title: blames[i].Title,
                             description: blames[i].Description,
                             code: blames[i].Code
                         };
@@ -107,6 +115,7 @@
             });
             $('#add-blame').click(function() {
                 var data = {
+                    Title: $('#title').val(),
                     Description: $('#description').val(),
                     Language: $('#language').val(),
                     Code: $('#code').val()
@@ -117,6 +126,7 @@
                     data: data,
                     success: function() {
                         var newBlame = {
+                            title: $('#title').val(),
                             description: $('#description').val(),
                             code: $('#code').val()
                         };
