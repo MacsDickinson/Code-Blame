@@ -72,12 +72,16 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Readme\Handlebarsjs_README.md" />
+    <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Content\highlight\obsidian.css" />
     <Content Include="Content\images\eventstore_logo.png" />
     <Content Include="Content\images\Nancy-logo.png" />
     <Content Include="Content\screen.css" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\handlebars.min.js" />
+    <Content Include="Scripts\handlebars.runtime.js" />
     <Content Include="Scripts\highlight.pack.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />

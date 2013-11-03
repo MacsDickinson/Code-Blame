@@ -28,12 +28,7 @@ namespace CodeBlame.Modules
 
             Get["/"] = ಠ_ಠ =>
                 {
-                    var stream = _eventStoreConnection.ReadStreamEventsBackward("Blames", -1, int.MaxValue, true);
-
-                    Model.Messages = new List<Blame>(stream.Events.Count());
-                    Model.Messages.AddRange(stream.Events.Select(streamEvent => streamEvent.Event.Data.ParseJson<Blame>()));
                     Model.Page.Title = "Code Blame - An Event Store & NancyFX Prototype";
-
                     Model.Languages = new Dictionary<int, string>();
 
                     var type = typeof(BlameLanguage);
@@ -44,6 +39,12 @@ namespace CodeBlame.Modules
                         Model.Languages.Add((int)value, ((DisplayAttribute)attributes[0]).Name);
                     }
                     return View["Index", Model];
+                };
+
+            Get["/GetBlames"] = ಠ_ಠ =>
+                {
+                    var stream = _eventStoreConnection.ReadStreamEventsBackward("Blames", -1, int.MaxValue, true);
+                    return stream.Events.Select(streamEvent => streamEvent.Event.Data.ParseJson<Blame>());
                 };
 
             Post["/Add"] = ಠ_ಠ =>

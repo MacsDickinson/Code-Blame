@@ -5,6 +5,7 @@
     <script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/Scripts/highlight.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/handlebars.min.js"></script>
     <link rel="stylesheet" href="/Content/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/Content/highlight/obsidian.css" />
     <link rel="stylesheet" href="/Content/screen.css" />
@@ -69,20 +70,37 @@
                     </div>
                 </div>
             </div>
-            @Each.Messages
-            <div class="panel panel-default">
-                <div class="panel-heading">@Current.Description</div>
-                <div class="panel-body">
-                    <pre>
-                        <code>@!Current.Code</code>
-                    </pre>
-                </div>
+            <div id="blames">
             </div>
-            @EndEach
         </div>
     </div>
+    <script id="blame-template" type="text/x-handlebars-template">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{description}}</div>
+            <div class="panel-body">
+                <pre>
+                    <code>{{code}}</code>
+                </pre>
+            </div>
+        </div>
+    </script>
     <script type="text/javascript">
         $(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/GetBlames',
+                success: function (blames) {
+                    for (var i = 0; i < blames.length; i++) {
+                        var blame = {
+                            description: blames[i].Description,
+                            code: blames[i].Code
+                        };
+                        addBlame(blame, false);
+                    }
+                }
+            });
+            var source = $("#blame-template").html();
+            var template = Handlebars.compile(source);
             hljs.initHighlightingOnLoad();
             $('#new-blame').click(function () {
                 $('#new-blame-form').removeClass('hidden');
@@ -98,10 +116,31 @@
                     url: '/Add',
                     data: data,
                     success: function() {
-                        alert('done');
+                        var newBlame = {
+                            description: $('#description').val(),
+                            code: $('#code').val()
+                        };
+                        addBlame(newBlame, true);
+                        clearBlameForm();
                     }
                 });
             });
+            var addBlame = function(blame, prepend) {
+                var html = template(blame);
+                var $html = $.parseHTML(html);
+                if (prepend) {
+                    $('#blames').prepend($html);
+                } else {
+                    $('#blames').append($html);
+                }
+                $('pre code', $html).each(function (i, e) { hljs.highlightBlock(e); });
+            };
+            var clearBlameForm = function () {
+                $('#new-blame-form').addClass('hidden');
+                $('#description').val('');
+                $('#language').val(0);
+                $('#code').val('');
+            };
         });
     </script>
 </body>
