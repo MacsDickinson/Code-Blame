@@ -139,7 +139,7 @@
                             title: $('#title').val(),
                             description: $('#description').val(),
                             code: $('#code').val(),
-                            language: $('#language').val()
+                            language: $('#language option:selected').text()
                         };
                         addBlame(newBlame, true);
                         clearBlameForm();
@@ -158,6 +158,7 @@
             };
             var clearBlameForm = function () {
                 $('#new-blame-form').addClass('hidden');
+                $('#title').val('');
                 $('#description').val('');
                 $('#language').val(0);
                 $('#code').val('');
