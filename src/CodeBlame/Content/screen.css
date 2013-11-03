@@ -1,6 +1,16 @@
 ﻿body {
     background: url('/Content/images/grid.png');
+    background-attachment: fixed;
     color: #323232;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.navbar-nav {
+    margin: 0;
 }
 
 .navbar-default {
@@ -43,6 +53,10 @@
     .panel-body pre {
         background-color: transparent;
         border: 0;
+    }
+
+    .panel-heading h1, .panel-heading h2 {
+        margin: 0;
     }
 
 pre code {
