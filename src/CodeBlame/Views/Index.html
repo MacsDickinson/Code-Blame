@@ -28,56 +28,59 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-default" >
+    <nav class="navbar navbar-default">
     </nav>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="jumbotron">
                 <div class="container">
                     <h1>Blame & Shame</h1>
+                    <p>This is a simple prototype exploring the features of Event Store through NancyFX. Check out the code on <a href="https://github.com/MacsDickinson/Code-Blame/" title="Code-Blame" target="_blank">GitHub</a>.</p>
                     <p>We all stumble across seriously bad code on a daily basis. This site is a vent for that.</p>
                     <p><a class="btn btn-primary btn-lg" id="new-blame">Blame Someone</a></p>
                 </div>
             </div>
             <div id="new-blame-form" class="hidden panel panel-default">
-                <div class="panel-heading"><h2>Blame</h2></div>
+                <div class="panel-heading">
+                    <h2>Blame</h2>
+                </div>
                 <div class="panel-body">
                     <div class="form-horizontal">
-                    <div class="form-group">
-                        <label for="title" class="col-lg-2 control-label">Title</label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="title" placeholder="Title" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description" class="col-lg-2 control-label">Description</label>
-                        <div class="col-lg-10">
-                            <textarea id="description" class="form-control" rows="3" placeholder="Description"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="language" class="col-lg-2 control-label">Language</label>
-                        <div class="col-lg-10">
-                            <div class="btn-group">
-                                <select class="form-control" id="language">
-                                    @Each.Languages
-                                    <option value="@Current.Key">@Current.Value</option>
-                                    @EndEach
-                                </select>
+                        <div class="form-group">
+                            <label for="title" class="col-lg-2 control-label">Title</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="title" placeholder="Title" />
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="code" class="col-lg-2 control-label">Code</label>
-                        <div class="col-lg-10">
-                            <textarea id="code" class="form-control" rows="5" placeholder="Code"></textarea>
+                        <div class="form-group">
+                            <label for="description" class="col-lg-2 control-label">Description</label>
+                            <div class="col-lg-10">
+                                <textarea id="description" class="form-control" rows="3" placeholder="Description"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <button type="submit" class="btn btn-default" id="add-blame" >Submit</button>
+                        <div class="form-group">
+                            <label for="language" class="col-lg-2 control-label">Language</label>
+                            <div class="col-lg-10">
+                                <div class="btn-group">
+                                    <select class="form-control" id="language">
+                                        @Each.Languages
+                                            <option value="@Current.Key">@Current.Value</option>
+                                        @EndEach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="code" class="col-lg-2 control-label">Code</label>
+                            <div class="col-lg-10">
+                                <textarea id="code" class="form-control" rows="5" placeholder="Code"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" class="btn btn-default" id="add-blame">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,7 +126,7 @@
             $('#new-blame').click(function () {
                 $('#new-blame-form').removeClass('hidden');
             });
-            $('#add-blame').click(function() {
+            $('#add-blame').click(function () {
                 var data = {
                     Title: $('#title').val(),
                     Description: $('#description').val(),
@@ -134,7 +137,7 @@
                     type: 'POST',
                     url: '/Add',
                     data: data,
-                    success: function() {
+                    success: function () {
                         var newBlame = {
                             title: $('#title').val(),
                             description: $('#description').val(),
@@ -146,7 +149,7 @@
                     }
                 });
             });
-            var addBlame = function(blame, prepend) {
+            var addBlame = function (blame, prepend) {
                 var html = template(blame);
                 var $html = $.parseHTML(html);
                 if (prepend) {
