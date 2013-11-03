@@ -1,8 +1,9 @@
 ﻿body {
+    background: url('/Content/images/grid.png');
 }
 
 .navbar-default {
-  background-color: #323232;
+    background-color: #323232;
     background-repeat: repeat-x;
     border-bottom: 3px solid #6BA300;
   }
@@ -32,3 +33,17 @@
         text-decoration: none;
         background-color: #C9E63C;
     }
+
+.panel {
+    background-color: #323232;
+    border: none;
+    color: #E0E2E4;
+}
+    .panel-body pre {
+        background-color: transparent;
+        border: 0;
+    }
+
+pre code {
+    background-color: #323232;
+}
